@@ -1,4 +1,4 @@
-import {HashRouter as Router, Route, Routes} from "react-router-dom"
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import Login from "./Login"
 import Register from "./Register"
 import Update from "./Update"
@@ -18,6 +18,8 @@ function App() {
 
   return (
     <div className="App">
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1"></meta>
+      
       <Router>
         <Routes>
           <Route path="/" element={<Static/>}/>

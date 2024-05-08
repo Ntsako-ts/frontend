@@ -197,6 +197,14 @@
     text-decoration: none;
 }
 
+.about-content h1{
+
+    position: relative;
+    bottom: 300px;
+    margin-left: 20px;
+    
+}
+
 .about-content h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-left: 5px;
@@ -228,6 +236,8 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, 
     Verdana, sans-serif;
 }
+
+
 
 .contacts-content h2{
     font-size: 20px;
@@ -412,3 +422,46 @@ hr{
 .health-dialog h2 p{
     color: #333;
 }
+
+.data-box {
+    
+    /* justify-content: right; */
+   max-height : 50%;
+
+    
+}
+/* ul.history20{
+
+}
+/* health data edited 
+.health-data{
+    
+
+} */
+
+/* MEDIA QUERYS */
+@media screen and (max-width: 2000px){
+    
+    .contacts-content h1{
+        position: relative;
+        bottom: 200px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .about-content h1{
+
+        position: relative;
+        bottom: 200px;
+        margin-left: 20px;
+        
+    }
+
+    .contacts-content h1{
+        position: relative;
+        bottom: 200px;
+        margin-left: 40px;
+    }
+}
+

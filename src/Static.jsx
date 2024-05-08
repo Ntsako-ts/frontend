@@ -42,9 +42,6 @@ function Static(){
             <div id="navbar">
             <ul>
             <li>
-                <Link to="/" className="nav-link" activeClassName="active">Start</Link>
-            </li>
-            <li>
                 <Link to="/contacts" className="nav-link" activeClassName="active">Contacts</Link>
             </li>
             <li>
@@ -54,7 +51,7 @@ function Static(){
             </div>
         </nav>
             <h1>Ntsako's online Diabetes diagnosis</h1>
-            <h2>Health is welth, be up to date with your health, click below to proceed</h2>
+            <h2>Health is wealth, be up to date with your health, click below to proceed</h2>
             <button className="welcome-button" style={styles}><p><a href="/login" style={tagStyle}>Get Started</a></p></button>
             </div>
         </div>

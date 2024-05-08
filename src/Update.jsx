@@ -23,7 +23,7 @@ function Update(){
             if(token){
 
                 const response = await fetch('https://health2-v6zl.onrender.com/api/update/', {
-                method: 'PATCH', // partial update
+                method: 'PUT', // partial update
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'token ' + token

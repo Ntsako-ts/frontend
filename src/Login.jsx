@@ -6,6 +6,7 @@ function Login(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+    //const [returned, setReturned] = useState('');
     const navigate = useNavigate();
 
     const loginUser = async(e)=>{
@@ -26,6 +27,11 @@ function Login(){
                     })
                 });
 
+                // console.log(response.statusText);
+
+                // const returnedData = await response.json();
+                // console.log(returnedData);
+
     
                 if(response.status == 200){
 
@@ -39,6 +45,7 @@ function Login(){
                     navigate('/home', {replace: true});
 
                 }else{
+                    console.log(response.statusText);
                     alert('something went wrong, try again');
                     console.log('Login failed:', response.statusText);
                 }

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 function History(){
 
     const [healthData, setHealthData] = useState('');
-    const [loading, setLoading] = useState(false);
+    const [deletedItem, setDeletedItem] = useState([]);
     const [selectedData, setSelecedData] = useState(null);
     const [logginout, setLogginOut] = useState(false);
     const [isDelete, setIsDelete] = useState(false);
@@ -62,9 +62,21 @@ function History(){
 
             if(deleteResponse.status == 200){
 
-                alert('Successfully logged out');
-                // redirect to home page
-                navigate('/login', {replace: true});
+
+
+                alert('Item deleted');
+
+                setDeletedItem(prevItem=> {const index = prevItem.findIndex(item=> item.dataId === dataId);
+                    if(index !== -1){
+                        const updatedItems = [...prevItem];
+                        updatedItems.splice(index, 1);
+                        return updatedItems;
+                    }
+                    return prevItem;
+                });
+
+                // redirect to history page
+                navigate('/history', {replace: true});
 
             }else{
                 alert('something went wrong, try again');
@@ -228,15 +240,18 @@ function History(){
         </nav>
             <h1>Your history</h1>
             <div className="health-data">
-                <ul>
+                <div className="data-box">
+                <ul className="history20">
                     {healthData.length > 0 && healthData.map((health)=>(
                         <li key={health.id} onClick={()=>handleClick(health)}>
                             <h2>According to your submitted data, {health.diabetes_prediction}</h2>
                             <p>Submitted on {formatDate(health.date_created)}</p>
                             <button style={deleteButton} onClick={()=> deleteData(health.id.toString())}>Delete</button>
+                            
                         </li>
                     ))}
                 </ul>
+                </div>
             </div>
             <dialog id="health-dialog" style={dialogStyle}>
                     <h2 style={h2Style}>{isDelete ? 'Deleting data...' : 'Provided data'}</h2>

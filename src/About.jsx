@@ -14,12 +14,10 @@ function About(){
             <li>
                 <Link to="/contacts" className="nav-link">Contacts</Link>
             </li>
-            <li>
-                <Link to="/about" className="nav-link">About</Link>
-            </li>
             </ul>
             </div>
         </nav>
+        <h1>ABOUT US</h1>
             <h2>
                 To provide self assessment of health status in case youre feeling a little bit off or 
                 experiencing certain symptoms, this websites gives a a prediction of what could be wrong with your health
