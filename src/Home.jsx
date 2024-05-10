@@ -71,6 +71,7 @@ function HomePage(){
 
                 if(response.status == 200){
                     // redirect to home page
+                    alert('Successfully logged out');
                     navigate('/login', {replace: true});
 
                 }else {
@@ -92,9 +93,6 @@ function HomePage(){
             <nav className="nav-bar">
             <div id="navbar">
             <ul>
-            <li>
-                <Link to="/home" className="nav-link">Home</Link>
-            </li>
             <li>
                 <Link to="/history" className="nav-link">History</Link>
             </li>

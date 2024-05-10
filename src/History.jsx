@@ -92,41 +92,41 @@ function History(){
     };
     
 
-    const logout = async(e)=>{
-        e.preventDefault();
-        setLogginOut(true);
+    // const logout = async(e)=>{
+    //     e.preventDefault();
+    //     setLogginOut(true);
 
-        // attaching the token
-        const token = localStorage.getItem('token');
+    //     // attaching the token
+    //     const token = localStorage.getItem('token');
 
-        try {
-            // sending the request
-            const response = await fetch('https://health2-v6zl.onrender.com/api/logout/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'token ' + token
-                },
-            });
+    //     try {
+    //         // sending the request
+    //         const response = await fetch('https://health2-v6zl.onrender.com/api/logout/', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': 'token ' + token
+    //             },
+    //         });
 
-            console.log(response.statusText);
+    //         console.log(response.statusText);
 
-            if(response.status == 200){
+    //         if(response.status == 200){
 
-                alert('Successfully logged out');
-                // redirect to home page
-                navigate('/login', {replace: true});
+    //             alert('Successfully logged out');
+    //             // redirect to home page
+    //             navigate('/login', {replace: true});
 
-            }else{
-                alert('something went wrong, try again');
-                console.log('Login failed:', response.statusText);
-            }
+    //         }else{
+    //             alert('something went wrong, try again');
+    //             console.log('Login failed:', response.statusText);
+    //         }
             
-        } catch (error) {
-            console.error('Error:', error);
-        }
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //     }
 
-    };
+    // };
 
     const handleClick = (health)=>{
 
@@ -157,22 +157,23 @@ function History(){
 
     const dialogStyle = {
         position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "coral",
-    border: "15px",
-    zIndex: "1000",
-    overflowY: "auto",
-    maxHeight: "60%",
-    maxWidth: "350px",
-    padding: "10px",
-    borderRadius: "15px",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        backgroundColor: "aliceblue",
+        border: "15px",
+        zIndex: "1000",
+        overflowY: "auto",
+        maxHeight: "60%",
+        maxWidth: "350px",
+        padding: "10px",
+        borderRadius: "15px",
     }
 
     const pStyle = {
         marginBotton: "10px",
         fontSize: "20px",
+        color: "black"
     }
 
     const lastPStyle = {
@@ -184,6 +185,7 @@ function History(){
         alignItems: "center",
         justifyContent: "center",
         marginBotton: "5px",
+        color: "black"
     }
 
     const closeButton = {
@@ -231,9 +233,6 @@ function History(){
             </li>
             <li>
                 <Link to="/user_details" className="nav-link">Me</Link>
-            </li>
-            <li>
-                <Link to="#" className="nav-link" onClick={logout}>Logout</Link>
             </li>
             </ul>
             </div>

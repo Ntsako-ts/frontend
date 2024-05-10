@@ -10,40 +10,40 @@ function Passwords(){
     const [loggingOut, setLogginOut] = useState(false);
     const navigate = useNavigate();
 
-    // logout
-    const logout = async(e)=>{
-        e.preventDefault();
-        setLogginOut(true);
+    // // logout
+    // const logout = async(e)=>{
+    //     e.preventDefault();
+    //     setLogginOut(true);
 
-        // attaching the token
-        const token = localStorage.getItem('token');
+    //     // attaching the token
+    //     const token = localStorage.getItem('token');
 
-        try {
-            // sending the request
-            const response = await fetch('https://health2-v6zl.onrender.com/api/logout/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'token ' + token
-                },
-            });
+    //     try {
+    //         // sending the request
+    //         const response = await fetch('https://health2-v6zl.onrender.com/api/logout/', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': 'token ' + token
+    //             },
+    //         });
 
-            if(response.status == 200){
+    //         if(response.status == 200){
 
-                alert('Successfully logged out');
-                // redirect to home page
-                navigate('/', {replace: true});
+    //             alert('Successfully logged out');
+    //             // redirect to home page
+    //             navigate('/', {replace: true});
 
-            }else{
-                alert('something went wrong, try again');
-                console.log('Login failed:', response.statusText);
-            }
+    //         }else{
+    //             alert('something went wrong, try again');
+    //             console.log('Login failed:', response.statusText);
+    //         }
             
-        } catch (error) {
-            console.error('Error:', error);
-        }
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //     }
 
-    }
+    // }
 
     // update the password
     const updatePassowrd = async(e)=>{
@@ -127,9 +127,6 @@ function Passwords(){
                         </li>
                         <li>
                             <Link to="/user_details" className="nav-link">Me</Link>
-                        </li>
-                        <li>
-                            <Link to="#" className="nav-link" onClick={logout}>Logout</Link>
                         </li>
                     </ul>
                 </div>

@@ -4,14 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 function Diagnosis(){
 
     const [age, setAge] = useState('');
-    const [height, setHeight] = useState('');
-    const [weight, setWeight] = useState('');
+    const [bodyMassIndex, setBodyMassIndex] = useState('');
     const [pregnancies, setPregnancies] = useState('');
     const [glucoseLevel, setGlucoseLevel] = useState('');
     const [bloodPressure, setBloodPressure] = useState('');
     const [skinThikness, setSkinThickness] = useState('');
     const [insulinLevel, setInsulinLevel] = useState('');
-    const [diabetesHistory, setDiabetesHistory] = useState('');
+    const [diabetesPedigreeFuction, setDiabetesPedigreeFuction] = useState('');
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -47,14 +46,13 @@ function Diagnosis(){
                 },
                 body: JSON.stringify({
                         age: age,
-                            height: height,
-                            weight: weight,
-                            pregnancies: pregnancies,
-                            glucose_level: glucoseLevel,
-                            blood_pressure: bloodPressure,
-                            skin_thickness: skinThikness,
-                            insulin_level: insulinLevel,
-                            family_diabetes_history: diabetesHistory
+                        body_mass_index: bodyMassIndex,
+                        pregnancies: pregnancies,
+                        glucose_level: glucoseLevel,
+                        blood_pressure: bloodPressure,
+                        skin_thickness: skinThikness,
+                        insulin_level: insulinLevel,
+                        diabetes_pedigree_function: diabetesPedigreeFuction
                 })
             });
 
@@ -75,14 +73,9 @@ function Diagnosis(){
             results = false;
             alert('Invalid age');
         }
-        if(height ==='' || height ===null){
+        if(bodyMassIndex ==='' || bodyMassIndex ===null){
             results = false;
             alert('Invalid height');
-        }
-
-        if(weight ==='' || weight ===null){
-            results = false;
-            alert('Invalid weight');
         }
 
         if(pregnancies ==='' || pregnancies ===null){
@@ -110,9 +103,9 @@ function Diagnosis(){
             alert('Invalid insulin level');
         }
 
-        if(diabetesHistory ==='' || diabetesHistory ===null){
+        if(diabetesPedigreeFuction ==='' || diabetesPedigreeFuction ===null){
             results = false;
-            alert('Invalid diabetes history');
+            alert('Invalid diabetes pedigree function');
         }
     }
 
@@ -163,9 +156,6 @@ function Diagnosis(){
             <li>
                 <Link to="/update" className="nav-link">Update</Link>
             </li>
-            <li>
-                <Link to="#" className="nav-link" onClick={logout}>Logout</Link>
-            </li>
             </ul>
             </div>
         </nav>
@@ -173,19 +163,13 @@ function Diagnosis(){
         <div className="diagnosis-inputs">
             <form onSubmit={checkUser}>
                 <div className="data-input"><input type="text" placeholder="Age" value={age} onChange={(e)=>setAge(e.target.value)}></input></div>
-                <div className="data-input"><input type="text" placeholder="Height" value={height} onChange={(e)=>setHeight(e.target.value)}></input></div>
-                <div className="data-input"><input type="text" placeholder="Weight" value={weight} onChange={(e)=>setWeight(e.target.value)}></input></div>
+                <div className="data-input"><input type="text" placeholder="Body Mass Index" value={bodyMassIndex} onChange={(e)=>setBodyMassIndex(e.target.value)}></input></div>
                 <div className="data-input"><input type="text" placeholder="Pregnancies" value={pregnancies} onChange={(e)=>setPregnancies(e.target.value)}></input></div>
                 <div className="data-input"><input type="text" placeholder="Glucose level" value={glucoseLevel} onChange={(e)=>setGlucoseLevel(e.target.value)}></input></div>
                 <div className="data-input"><input type="text" placeholder="Blood pressure" value={bloodPressure} onChange={(e)=>setBloodPressure(e.target.value)}></input></div>
                 <div className="data-input"><input type="text" placeholder="Skin thickness" value={skinThikness} onChange={(e)=>setSkinThickness(e.target.value)}></input></div>
                 <div className="data-input"><input type="text" placeholder="Insulin level" value={insulinLevel} onChange={(e)=>setInsulinLevel(e.target.value)}></input></div>
-                <div className="check"><label> Family history with diabetes <select value={diabetesHistory} onChange={(e)=>setDiabetesHistory(e.target.value)}>
-                        <option value="None">None</option>
-                        <option value="Low">Low</option>
-                        <option value="Mid">Mid</option>
-                        <option value="High">Hight</option>
-                    </select></label></div>
+                <div className="data-input"><input type="text" placeholder="Diabetes Pedigree Function" value={diabetesPedigreeFuction} onChange={(e)=>setDiabetesPedigreeFuction(e.target.value)}></input></div>
                 <button type="submit" style={styles} className="diagnose-btn">{loading ? 'Diagnosing...' : 'Diagnose'}</button>
             </form>
         </div>
