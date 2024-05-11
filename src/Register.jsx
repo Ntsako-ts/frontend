@@ -33,8 +33,13 @@ function Register(){
             })
         });
 
+        // console.log(response.statusText);
+        // const data = await response.json();
+        // console.log(data);
+
         if(response.status == 201){
             const data = await response.json();
+            
             const {token} = data;
 
             // save token in secure storage
@@ -45,7 +50,7 @@ function Register(){
         }
             
         } catch (error) {
-            
+            alert(error);
             console.error('Error:', error);
 
         }finally{
