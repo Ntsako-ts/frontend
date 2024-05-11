@@ -19,11 +19,12 @@ function Check(){
         e.preventDefault();
 
         setLoading(true);
+        
         try {
 
             const token = localStorage.getItem('token');
 
-            const userResponse = await fetch('https://health2-v6zl.onrender.com/api/data/',
+            const userResponse = await fetch('https://backend-83h2.onrender.com/api/data/',
         {
             method: 'POST',
             headers: {
@@ -43,9 +44,9 @@ function Check(){
             }),
         });
 
-        //console.log(userResponse.statusText);
-        //const data = await userResponse.json();
-        //console.log(data);
+        // console.log(userResponse.statusText);
+        // const data = await userResponse.json();
+        // console.log(data);
 
 
         if(userResponse.status == 201){
@@ -71,17 +72,18 @@ function Check(){
         justifyContent: "center",
         alignItems: "center",
         marginTop: "10px",
-        marginLeft: "10px",
+        marginLeft: "0px",
         borderRadius: "15px",
         border: "none",
-        backgroundColor: "rgba(255, 255, 255, 0.75)",
+        backgroundColor: "rgba(0, 248, 83, 0.75)",
         padding: "10px",
         cursor: "pointer",
         fontFamily: "Arial, Helvetica, sans-serif",
         fontSize: "20px",
         fontWeight: "bold",
-        color: "#333",
+        color: "aliceblue",
         textDecoration: "none",
+        width : "400px"
     }
 
 
@@ -178,14 +180,14 @@ function Check(){
         <h1>Self Diagnose</h1>
         <div className="diagnosis-inputs">
             <form onSubmit={diagnoseUser}>
-                <div className="data-input"><input type="text" placeholder="Age" value={age} onChange={(e)=>setAge(e.target.value)}></input></div>
-                <div className="data-input"><input type="text" placeholder="Body Mass Index" value={bodyMassIndex} onChange={(e)=>setBodyMassIndex(e.target.value)}></input></div>
-                <div className="data-input"><input type="text" placeholder="Pregnancies" value={pregnancies} onChange={(e)=>setPregnancies(e.target.value)}></input></div>
-                <div className="data-input"><input type="text" placeholder="Glucose level" value={glucoseLevel} onChange={(e)=>setGlucoseLevel(e.target.value)}></input></div>
-                <div className="data-input"><input type="text" placeholder="Blood pressure" value={bloodPressure} onChange={(e)=>setBloodPressure(e.target.value)}></input></div>
-                <div className="data-input"><input type="text" placeholder="Skin thickness" value={skinThikness} onChange={(e)=>setSkinThickness(e.target.value)}></input></div>
-                <div className="data-input"><input type="text" placeholder="Insulin level" value={insulinLevel} onChange={(e)=>setInsulinLevel(e.target.value)}></input></div>
-                <div className="data-input"><input type="text" placeholder="Diabetes Pedigree Function" value={diabetesPedigreeFuction} onChange={(e)=>setDiabetesPedigreeFuction(e.target.value)}></input></div>
+                <div className="data-input"><input type="text" placeholder="Age" required value={age} onChange={(e)=>setAge(e.target.value)}></input></div>
+                <div className="data-input"><input type="text" placeholder="Body Mass Index" required value={bodyMassIndex} onChange={(e)=>setBodyMassIndex(e.target.value)}></input></div>
+                <div className="data-input"><input type="text" placeholder="Pregnancies" required value={pregnancies} onChange={(e)=>setPregnancies(e.target.value)}></input></div>
+                <div className="data-input"><input type="text" placeholder="Glucose level" required value={glucoseLevel} onChange={(e)=>setGlucoseLevel(e.target.value)}></input></div>
+                <div className="data-input"><input type="text" placeholder="Blood pressure" required value={bloodPressure} onChange={(e)=>setBloodPressure(e.target.value)}></input></div>
+                <div className="data-input"><input type="text" placeholder="Skin thickness" required value={skinThikness} onChange={(e)=>setSkinThickness(e.target.value)}></input></div>
+                <div className="data-input"><input type="text" placeholder="Insulin level" required value={insulinLevel} onChange={(e)=>setInsulinLevel(e.target.value)}></input></div>
+                <div className="data-input"><input type="text" placeholder="Diabetes Pedigree Function" required value={diabetesPedigreeFuction} onChange={(e)=>setDiabetesPedigreeFuction(e.target.value)}></input></div>
                 <button type="submit"  style={styles} className="diagnose-btn">{loading ? 'Diagnosing...' : 'Diagnose'}</button>
             </form>
         </div>

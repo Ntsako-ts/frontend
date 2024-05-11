@@ -316,22 +316,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 5%;
 }
 
 .diagnosis-inputs .data-input{
     background-color: transparent;
 }
 
-.data-input {
-    width: 200px;
-    margin: 10px;
+.data-input input{
+
+    width: 400px;
+    margin-bottom: 10px;
     border: none;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
+    border-radius: 10px;
+    height: 38px;
     font-size: 16px;
-    color: aliceblue;
+    color: #333;
     padding: 5px 5px 5px 0;
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding-left: 10px;
 }
 
 .check{
@@ -339,14 +343,21 @@
 }
 
 .diagnosis h1{
-    padding: 45px 40px;
+    padding: 0px;
     font-size: 50px;
     color: aliceblue;
+    padding-top: 40px;
 }
 
 .diagnose-btn{
     align-items: center;
     justify-content: center;
+    background-color: rgb(0, 248, 83);
+}
+
+.data-input ::placeholder{
+    padding-left: 0px;
+    color: #333;
 }
 
 /* history data */

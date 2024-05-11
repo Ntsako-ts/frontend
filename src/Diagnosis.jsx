@@ -38,7 +38,7 @@ function Diagnosis(){
         e.preventDefault();
 
         try {
-            const diagnose = await fetch('https://health2-v6zl.onrender.com/api/data/',{
+            const diagnose = await fetch('https://backend-83h2.onrender.com/api/data/',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ function Diagnosis(){
 
             if(token){
 
-                const response = await fetch('https://health2-v6zl.onrender.com/api/logout/', {
+                const response = await fetch('https://backend-83h2.onrender.com/api/logout/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

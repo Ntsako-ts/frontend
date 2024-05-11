@@ -18,7 +18,7 @@ function History(){
 
                 const token = localStorage.getItem('token');
 
-                const dataResponse = await fetch('https://health2-v6zl.onrender.com/api/data/',{
+                const dataResponse = await fetch('https://backend-83h2.onrender.com/api/data/',{
                     method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ function History(){
 
         try {
             // sending the request
-            const deleteResponse = await fetch(`https://health2-v6zl.onrender.com/api/data/${dataId}/`, {
+            const deleteResponse = await fetch(`https://backend-83h2.onrender.com/api/data/${dataId}/`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

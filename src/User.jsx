@@ -19,7 +19,7 @@ function UserDetails(){
 
         if(token){
 
-            const response = await fetch('https://health2-v6zl.onrender.com/api/user/', {
+            const response = await fetch('https://backend-83h2.onrender.com/api/user/', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ function UserDetails(){
 
         try {
             // sending the request
-            const response = await fetch('https://health2-v6zl.onrender.com/api/logout/', {
+            const response = await fetch('https://backend-83h2.onrender.com/api/logout/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

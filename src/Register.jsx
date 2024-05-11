@@ -18,7 +18,7 @@ function Register(){
             setLoading(true);
         try {
 
-            const response = await fetch('https://health2-v6zl.onrender.com/api/register/',
+            const response = await fetch('https://backend-83h2.onrender.com/api/register/',
         {
             method: 'POST',
             headers: {

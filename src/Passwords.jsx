@@ -57,7 +57,7 @@ function Passwords(){
 
                 try{
 
-                    const response = await fetch('https://health2-v6zl.onrender.com/password/change/', {
+                    const response = await fetch('https://backend-83h2.onrender.com/password/change/', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
